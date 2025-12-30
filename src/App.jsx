@@ -70,12 +70,63 @@ export default function App() {
     }
   }
 
-  return (
-    <div style={{ padding: 24 }}>
-      <h1>DemoMed Risk Assessment</h1>
-      <button onClick={runAssessment}>Run Assessment</button>
-      <p>Status: {status}</p>
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+ return (
+  <div
+    style={{
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      background: "#f5f7fa",
+      fontFamily: "system-ui, sans-serif",
+    }}
+  >
+    <div
+      style={{
+        background: "#fff",
+        padding: "24px",
+        borderRadius: "8px",
+        width: "100%",
+        maxWidth: "600px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+      }}
+    >
+      <h1 style={{ marginBottom: "16px" }}>DemoMed Risk Assessment</h1>
+
+      <button
+        onClick={runAssessment}
+        style={{
+          padding: "10px 16px",
+          background: "#2563eb",
+          color: "#fff",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+        }}
+      >
+        Run Assessment
+      </button>
+
+      <p style={{ marginTop: "12px" }}>
+        <strong>Status:</strong> {status}
+      </p>
+
+      {result && (
+        <pre
+          style={{
+            marginTop: "16px",
+            padding: "12px",
+            background: "#f1f5f9",
+            borderRadius: "6px",
+            fontSize: "13px",
+            overflowX: "auto",
+          }}
+        >
+          {JSON.stringify(result, null, 2)}
+        </pre>
+      )}
     </div>
-  );
+  </div>
+);
+
 }
